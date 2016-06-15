@@ -85,7 +85,7 @@ def big_endian_to_int(value):
     if len(value) == 1:
         return ord(value)
     elif len(value) <= 8:
-        return struct.unpack('>Q', value.rjust(8, '\x00'))[0]
+        return struct.unpack('>Q', value.rjust(8, b'\x00'))[0]
     else:
         return int(encode_hex(value), 16)
 
